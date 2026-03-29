@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from "next/server"
+import { z } from "zod"
 import { MOCK_POSTS, delay } from "../_lib/mock-data"
+
+const postSchema = z.object({
+  title: z.string().min(1, "title은 필수입니다."),
+  body: z.string().min(1, "body는 필수입니다."),
+})
 
 // GET /examples/data-fetching/api
 // 게시글 목록 반환
@@ -23,19 +29,28 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   await delay(400)
 
-  const body = await request.json()
-
-  if (!body.title || !body.body) {
+  let rawBody: unknown
+  try {
+    rawBody = await request.json()
+  } catch {
     return NextResponse.json(
-      { error: "title과 body 필드가 필요합니다." },
+      { error: "유효한 JSON 형식이 아닙니다." },
+      { status: 400 }
+    )
+  }
+
+  const result = postSchema.safeParse(rawBody)
+  if (!result.success) {
+    return NextResponse.json(
+      { error: result.error.issues[0].message },
       { status: 400 }
     )
   }
 
   const newPost = {
     id: MOCK_POSTS.length + 1,
-    title: body.title,
-    body: body.body,
+    title: result.data.title,
+    body: result.data.body,
     userId: 1,
   }
 

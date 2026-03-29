@@ -9,7 +9,9 @@ export type TodoActionState = {
   todos?: { id: number; text: string; done: boolean }[]
 }
 
-// 서버 측 할 일 목록 (실제 앱에서는 DB 사용)
+// ⚠️ 예제용 인메모리 상태입니다.
+// 서버리스 환경(Vercel 등)에서는 인스턴스 간 공유되지 않으며, 서버 재시작 시 초기화됩니다.
+// 실제 앱에서는 반드시 데이터베이스(Prisma, Drizzle 등)를 사용하세요.
 let serverTodos = [
   { id: 1, text: "컴포넌트 설계하기", done: true },
   { id: 2, text: "API 연동하기", done: false },

@@ -20,7 +20,9 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
         <div className="space-y-2">
           <h1 className="text-2xl font-bold tracking-tight">문제가 발생했습니다</h1>
           <p className="text-muted-foreground">
-            {error.message || "알 수 없는 오류가 발생했습니다."}
+            {process.env.NODE_ENV === "development"
+              ? error.message || "알 수 없는 오류가 발생했습니다."
+              : "알 수 없는 오류가 발생했습니다."}
           </p>
         </div>
         <div className="flex gap-3">
