@@ -19,9 +19,8 @@ function QueryRow({ label, query }: { label: string; query: string }) {
   const [mounted, setMounted] = useState(false)
   const matches = useMediaQuery(query)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { setMounted(true) }, [])
 
   // 마운트 전에는 항상 "불일치"로 서버와 동일하게 렌더링
   const isMatching = mounted && matches

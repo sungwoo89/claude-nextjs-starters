@@ -5,6 +5,7 @@ import { navLinks, siteConfig } from "@/lib/constants"
 
 // 사이트 푸터 — 3컬럼 그리드 + 저작권
 export function Footer() {
+  // Footer는 동적 렌더링되므로 매 요청 시 현재 연도가 정확히 표시됩니다
   const currentYear = new Date().getFullYear()
 
   return (

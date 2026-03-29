@@ -2,18 +2,11 @@
 
 import { useActionState } from "react"
 import { addTodoAction, toggleTodoAction } from "../_actions"
+import { INITIAL_TODOS } from "../_lib/mock-data"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle2, Circle, Plus } from "lucide-react"
-
-type Todo = { id: number; text: string; done: boolean }
-
-const INITIAL_TODOS: Todo[] = [
-  { id: 1, text: "컴포넌트 설계하기", done: true },
-  { id: 2, text: "API 연동하기", done: false },
-  { id: 3, text: "테스트 작성하기", done: false },
-]
 
 export function MutationExample() {
   const [state, formAction, isPending] = useActionState(addTodoAction, {

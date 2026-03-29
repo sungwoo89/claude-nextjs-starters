@@ -24,11 +24,23 @@ const INITIAL_SETTINGS: Setting[] = [
   { id: "marketing", icon: Globe, label: "마케팅 정보", description: "이벤트, 프로모션 정보 수신", enabled: false },
 ]
 
-function ToggleSwitch({ enabled, onChange }: { enabled: boolean; onChange: () => void }) {
+function ToggleSwitch({
+  id,
+  enabled,
+  onChange,
+  ariaLabel,
+}: {
+  id?: string
+  enabled: boolean
+  onChange: () => void
+  ariaLabel?: string
+}) {
   return (
     <button
+      id={id}
       role="switch"
       aria-checked={enabled}
+      aria-label={ariaLabel}
       onClick={onChange}
       className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
         enabled ? "bg-primary" : "bg-input"
@@ -84,7 +96,12 @@ export function SettingsPanelExample() {
                     <p className="text-xs text-muted-foreground">{setting.description}</p>
                   </div>
                 </div>
-                <ToggleSwitch enabled={setting.enabled} onChange={() => toggle(setting.id)} />
+                <ToggleSwitch
+                  id={`setting-${setting.id}`}
+                  enabled={setting.enabled}
+                  onChange={() => toggle(setting.id)}
+                  ariaLabel={`${setting.label} 토글`}
+                />
               </div>
               {index < settings.length - 1 && <Separator />}
             </div>

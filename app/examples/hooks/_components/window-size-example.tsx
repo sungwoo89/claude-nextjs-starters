@@ -10,9 +10,8 @@ export function WindowSizeExample() {
   const [mounted, setMounted] = useState(false)
   const { width = 0, height = 0 } = useWindowSize()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { setMounted(true) }, [])
 
   // 브레이크포인트 감지 (마운트 전에는 기본값 사용)
   const breakpoint = !mounted ? "xs" :

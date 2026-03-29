@@ -111,19 +111,20 @@ export function CrudListExample() {
                 </>
               ) : (
                 <>
-                  <span
-                    className="flex-1 cursor-pointer text-sm"
+                  <button
+                    className="flex-1 text-left text-sm"
                     onClick={() => cycleStatus(item.id)}
                   >
                     {item.title}
-                  </span>
-                  <Badge
-                    variant={STATUS_VARIANTS[item.status]}
-                    className="cursor-pointer text-xs"
-                    onClick={() => cycleStatus(item.id)}
-                  >
-                    {item.status}
-                  </Badge>
+                  </button>
+                  <button onClick={() => cycleStatus(item.id)}>
+                    <Badge
+                      variant={STATUS_VARIANTS[item.status]}
+                      className="text-xs"
+                    >
+                      {item.status}
+                    </Badge>
+                  </button>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="icon" className="size-7">

@@ -23,7 +23,8 @@ const ROLES: Role[] = ["전체", "Frontend", "Backend", "Designer", "PM"]
 
 export function SearchFilterExample() {
   const [query, setQuery] = useState("")
-  const [debouncedQuery] = useDebounceValue(query, 200)
+  // 300ms 디바운스: 실제 API 호출 시 300~500ms 권장
+  const [debouncedQuery] = useDebounceValue(query, 300)
   const [activeRole, setActiveRole] = useState<Role>("전체")
 
   const filtered = MEMBERS.filter((member) => {
@@ -61,14 +62,13 @@ export function SearchFilterExample() {
       {/* 역할 필터 배지 */}
       <div className="flex flex-wrap gap-2">
         {ROLES.map((role) => (
-          <Badge
-            key={role}
-            variant={activeRole === role ? "default" : "outline"}
-            className="cursor-pointer"
-            onClick={() => setActiveRole(role)}
-          >
-            {role}
-          </Badge>
+          <button key={role} onClick={() => setActiveRole(role)}>
+            <Badge
+              variant={activeRole === role ? "default" : "outline"}
+            >
+              {role}
+            </Badge>
+          </button>
         ))}
       </div>
 

@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map((route) => ({
     url: `${siteConfig.url}${route}`,
-    lastModified: new Date(),
+    lastModified: new Date("2025-03-01"),
     changeFrequency: "monthly" as const,
     priority: route === "" ? 1 : 0.8,
   }))
