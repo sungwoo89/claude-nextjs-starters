@@ -24,7 +24,7 @@ export function HeroExample() {
       </div>
 
       {/* 좌측 정렬 히어로 */}
-      <div className="rounded-lg border bg-gradient-to-r from-muted/50 to-transparent px-6 py-10">
+      <div className="rounded-lg border bg-linear-to-r from-muted/50 to-muted/0 px-6 py-10">
         <Badge className="mb-3">베타</Badge>
         <h2 className="mb-2 text-2xl font-bold">좌측 정렬 히어로</h2>
         <p className="mb-5 max-w-md text-sm text-muted-foreground">

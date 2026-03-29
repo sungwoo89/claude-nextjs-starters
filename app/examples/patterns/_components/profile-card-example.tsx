@@ -57,7 +57,7 @@ export function ProfileCardExample() {
   return (
     <Card className="max-w-sm overflow-hidden">
       {/* 커버 이미지 영역 */}
-      <div className="h-20 bg-gradient-to-r from-blue-500 to-purple-600" />
+      <div className="h-20 bg-linear-to-r from-blue-500 to-purple-600" />
 
       <CardContent className="space-y-4 pt-0">
         {/* 아바타 + 편집 버튼 */}
