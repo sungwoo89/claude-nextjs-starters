@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
-import { Separator } from "@/components/ui/separator"
 import { Section } from "@/components/layout/section"
 import { PageHeader } from "@/components/layout/page-header"
+import { ExampleSectionList } from "@/components/layout/example-section-list"
 import { GridExample } from "./_components/grid-example"
 import { SidebarExample } from "./_components/sidebar-example"
 import { DashboardExample } from "./_components/dashboard-example"
@@ -53,23 +53,7 @@ export default function LayoutsPage() {
         title="레이아웃 예제"
         description="Tailwind CSS 기반의 반응형 레이아웃 패턴 예제 모음입니다."
       />
-      <div className="space-y-12">
-        {sections.map((section, index) => (
-          <div key={section.id} id={section.id} className="space-y-4">
-            <div className="flex items-center gap-4">
-              <div className="shrink-0">
-                <h2 className="text-lg font-semibold">{section.title}</h2>
-                {section.description && (
-                  <p className="text-sm text-muted-foreground">{section.description}</p>
-                )}
-              </div>
-              <Separator className="hidden flex-1 md:block" />
-            </div>
-            {section.component}
-            {index < sections.length - 1 && <div className="pt-4" />}
-          </div>
-        ))}
-      </div>
+      <ExampleSectionList sections={sections} />
     </Section>
   )
 }

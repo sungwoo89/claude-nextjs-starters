@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
-import { Separator } from "@/components/ui/separator"
 import { Section } from "@/components/layout/section"
 import { PageHeader } from "@/components/layout/page-header"
+import { ExampleSectionList } from "@/components/layout/example-section-list"
 import { ButtonExamples } from "./_components/button-examples"
 import { BadgeExamples } from "./_components/badge-examples"
 import { CardExamples } from "./_components/card-examples"
@@ -39,18 +39,7 @@ export default function ComponentsPage() {
         title="컴포넌트 쇼케이스"
         description="설치된 ShadcnUI 컴포넌트들의 실제 사용 예시입니다."
       />
-      <div className="space-y-12">
-        {sections.map((section, index) => (
-          <div key={section.id} id={section.id} className="space-y-4">
-            <div className="flex items-center gap-4">
-              <h2 className="shrink-0 text-lg font-semibold">{section.title}</h2>
-              <Separator className="flex-1" />
-            </div>
-            {section.component}
-            {index < sections.length - 1 && <div className="pt-4" />}
-          </div>
-        ))}
-      </div>
+      <ExampleSectionList sections={sections} alwaysShowSeparator />
     </Section>
   )
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
-import { Separator } from "@/components/ui/separator"
 import { Section } from "@/components/layout/section"
 import { PageHeader } from "@/components/layout/page-header"
+import { ExampleSectionList } from "@/components/layout/example-section-list"
 import { SeoExample } from "./_components/seo-example"
 import { ImageExample } from "./_components/image-example"
 import { FontExample } from "./_components/font-example"
@@ -53,23 +53,7 @@ export default function OptimizationPage() {
         title="설정 및 최적화"
         description="Next.js 16의 성능 최적화 기능과 설정 가이드 모음입니다."
       />
-      <div className="space-y-12">
-        {sections.map((section, index) => (
-          <div key={section.id} id={section.id} className="space-y-4">
-            <div className="flex items-center gap-4">
-              <div className="shrink-0">
-                <h2 className="text-lg font-semibold">{section.title}</h2>
-                {section.description && (
-                  <p className="text-sm text-muted-foreground">{section.description}</p>
-                )}
-              </div>
-              <Separator className="hidden flex-1 md:block" />
-            </div>
-            {section.component}
-            {index < sections.length - 1 && <div className="pt-4" />}
-          </div>
-        ))}
-      </div>
+      <ExampleSectionList sections={sections} />
     </Section>
   )
 }
