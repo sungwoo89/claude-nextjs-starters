@@ -10,7 +10,7 @@ import { AlertTriangle, RefreshCw } from "lucide-react"
 type FetchState = "idle" | "loading" | "success" | "error"
 
 const MOCK_DATA = [
-  { id: 1, name: "김개발", role: "Frontend" },
+  { id: 1, name: "ysw", role: "Frontend" },
   { id: 2, name: "이디자인", role: "Designer" },
   { id: 3, name: "박백엔드", role: "Backend" },
 ]

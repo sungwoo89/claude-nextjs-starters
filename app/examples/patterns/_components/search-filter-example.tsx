@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button"
 type Role = "전체" | "Frontend" | "Backend" | "Designer" | "PM"
 
 const MEMBERS = [
-  { id: 1, name: "김개발", role: "Frontend" as const, skills: ["React", "TypeScript"] },
+  { id: 1, name: "ysw", role: "Frontend" as const, skills: ["React", "TypeScript"] },
   { id: 2, name: "이백엔드", role: "Backend" as const, skills: ["Node.js", "PostgreSQL"] },
   { id: 3, name: "박디자인", role: "Designer" as const, skills: ["Figma", "Tailwind"] },
   { id: 4, name: "최프론트", role: "Frontend" as const, skills: ["Next.js", "Vue"] },

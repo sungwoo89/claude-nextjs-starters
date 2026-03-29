@@ -41,8 +41,8 @@ type Profile = {
 
 export function ProfileCardExample() {
   const [profile, setProfile] = useState<Profile>({
-    name: "김개발",
-    username: "kimdev",
+    name: "ysw",
+    username: "sw",
     bio: "풀스택 개발자. Next.js와 TypeScript를 좋아합니다.",
     location: "서울, 대한민국",
     website: "https://example.com",
@@ -66,8 +66,8 @@ export function ProfileCardExample() {
             <TooltipTrigger asChild>
               <div className="relative cursor-pointer">
                 <Avatar className="size-16 ring-4 ring-background">
-                  <AvatarImage src="https://avatar.vercel.sh/kimdev" />
-                  <AvatarFallback className="text-lg">김</AvatarFallback>
+                  <AvatarImage src="https://avatar.vercel.sh/sw" />
+                  <AvatarFallback className="text-lg">Y</AvatarFallback>
                 </Avatar>
                 <span className="absolute bottom-0.5 right-0.5 size-3 rounded-full bg-green-500 ring-2 ring-background" />
               </div>

@@ -29,7 +29,7 @@ export const MOCK_POSTS: Post[] = [
 
 // 모의 사용자 데이터
 export const MOCK_USERS: User[] = [
-  { id: 1, name: "김개발", email: "kim@example.com", role: "admin" },
+  { id: 1, name: "ysw", email: "kim@example.com", role: "admin" },
   { id: 2, name: "이디자인", email: "lee@example.com", role: "editor" },
   { id: 3, name: "박프론트", email: "park@example.com", role: "user" },
   { id: 4, name: "최백엔드", email: "choi@example.com", role: "user" },
