@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Home, FileText, Settings, Users, BarChart2 } from "lucide-react"
